@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load rest_framework %}
+
+{% block content %}
+
+<p class="text">Regissssterr</p>
+
+<form action="" method="post" class="form-group text input-box ol-md-6" novalidate>
+    {% csrf_token %}
+    {% render_form form %}
+
+    <input type="submit" value="Sign Up">
+</form>
+
+{% endblock %}

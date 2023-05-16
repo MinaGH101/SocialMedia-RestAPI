@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load rest_framework %}
+
+{% block content %}
+
+<form action="" method="post" class="text input-box col-md-6" novalidate>
+    {% csrf_token %}
+    {% render_form form %}
+
+    <input type="submit" value="Log In" class="text">
+
+</form>
+
+
+{% endblock %}

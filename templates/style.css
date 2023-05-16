@@ -1,0 +1,21 @@
+.navbar {
+    background-color: aqua;
+}
+
+a {
+    color: black;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.text {
+    padding: 20px;
+}
+
+.input-box {
+    width: 20vw;
+}
+
+.navbar {
+    background-color: purple;
+}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load rest_framework %}
+
+{% block content %}
+
+<p class='text'> hellooooo </p>
+
+<form action="" method="get">
+
+    {% csrf_token %}
+
+<input type="submit" value="search">
+
+</form>
+
+<div class="card">
+    {% for q in questions %}
+    <a class="card-body" href="" >{{ q.title }}</a>
+    {% endfor %}
+</div>
+
+{% comment %} <div class="card">
+    {% for post in posts %}
+    <a class="card-body" href="{% url 'home:post' post.id post.slug %}" >{{ post.body|truncatewords:2 }}</a>
+    {% endfor %}
+</div>
+ {% endcomment %}
+
+
+
+{% endblock %}
