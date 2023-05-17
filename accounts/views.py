@@ -140,14 +140,12 @@ class EditProfileView(APIView):
     
     def post(self, request):
         srz = self.serializer(data=request.POST)
+        prof = Profile.objects.get(user=request.user)
         if srz.is_valid():
-            srz.user = request.user
-            srz.save()
-            # request.user.email = srz.validated_data['email']
-            # request.user.is_verified = True
-            # request.user.is_active = True  
-            # request.user.save()
-            # messages(request, 'your profile saved successfully !!')
+            prof.age = srz.data['age']
+            prof.bio = srz.data['bio']
+            prof.save()
+
             Response(srz.data, status=status.HTTP_200_OK)
         return Response(srz.errors, status=status.HTTP_400_BAD_REQUEST)
             

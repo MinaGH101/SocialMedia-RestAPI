@@ -55,7 +55,7 @@ class Vote(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
+    user = models.OneToOneField(User,on_delete=models.CASCADE, null=True, blank=True)
     age = models.SmallIntegerField(default=0)
     bio = models.CharField(max_length=100, null=True, blank=True)
     
